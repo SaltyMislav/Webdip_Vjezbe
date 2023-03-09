@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna stranica</title>
+    <meta name="author" content="Mislav Žnidarec">
+    <meta name="keywords" content="Odabrana tema, HTML">
+    <meta nema="description" content="9.3.2023">
+    <link rel="stylesheet" type="text/css" href="css/mznidarec.css">
+    <link rel="stylesheet" type="text/css" href="css/mznidarec_prilagodbe.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="header">
+        <a href="./index.html">
+            <img class="slika" src="slike/foi-logo.jpg" alt="Logo stranice">
+        </a>
+        <div class="title">Početna stranica</div>
+        <div class="dropdown">
+            <select name="jezici" class="jezici">
+                <option value="hrvatski">HR</option>
+                <option value="engleski">EN</option>
+                <option value="njemacki">GER</option>
+            </select>
+        </div>
+        <div class="search-button">
+            <a class="button" href="#modal"><i class="material-icons">search</i></a>
+        </div>
+        <div id="modal" class="overlay">
+            <div class="popup">
+                <h2>Pretraživanje</h2>
+		        <a class="close" href="./index.html">&times;</a>
+		        <div class="content">
+                    <form action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php">
+                        <input type="text" name="Search" placeholder="Pretraživanje...">
+                        <input type="submit" value="Pretraži">  
+                    </form>
+		        </div>
+	        </div>
+        </div>
+    </div>
+    <div class="navigation">
+        <ul>
+            <li><a href="/o_autoru.html">O autoru</a></li>
+            <li><a href="/obrasci/authentifikacija.html">Authentifikacija</a></li>
+            <li><a href="/obrasci/obrazac.html">Obrazac</a></li>
+            <li><a href="/ostalo/multimedija.html">Multimedija</a></li>
+            <li><a href="/ostalo/popis.html">Popis</a></li>
+        </ul>
+    </div>
+    <div class="sadrzaj-pocetna">
+
+    </div>
+    <div class="footer">
+    </div>
+</body>
+</html>
