@@ -14,26 +14,33 @@
 </head>
 <body>
     <div class="header">
-        <a href="./index.html">
-            <img class="slika" src="slike/foi-logo.jpg" alt="Logo stranice">
-        </a>
-        <div class="title">Početna stranica</div>
-        <div class="dropdown">
-            <select name="jezici" class="jezici">
-                <option value="hrvatski">HR</option>
-                <option value="engleski">EN</option>
-                <option value="njemacki">GER</option>
-            </select>
+        <div class="header-left">
+            <a href="./index.html">
+                <img class="slika" src="slike/foi-logo.jpg" alt="Logo stranice">
+            </a>
+            <div class="title">Početna stranica</div>
         </div>
-        <div class="search-button">
-            <a class="button" href="#modal"><i class="material-icons">search</i></a>
+
+        <div class="header-right">
+            <div class="search-button">
+                <a class="button" href="#modal"><i class="material-icons">search</i></a>
+            </div>
+    
+            <div class="dropdown">
+                <select name="jezici" class="jezici">
+                    <option value="hrvatski">HR</option>
+                    <option value="engleski">EN</option>
+                    <option value="njemacki">GER</option>
+                </select>
+            </div>
         </div>
+
         <div id="modal" class="overlay">
             <div class="popup">
                 <h2>Pretraživanje</h2>
 		        <a class="close" href="./index.html">&times;</a>
 		        <div class="content">
-                    <form action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php">
+                    <form action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php" target="_blank">
                         <input type="text" name="Search" placeholder="Pretraživanje...">
                         <input type="submit" value="Pretraži">  
                     </form>
@@ -57,6 +64,9 @@
             </li>
             <li class="elementi">
                 <a href="/ostalo/popis.html">Popis</a>
+            </li>
+            <li class="odjava">
+                <a href="#">Odjava</a>
             </li>
         </ul>
     </div>
