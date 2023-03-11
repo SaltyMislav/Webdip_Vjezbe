@@ -149,3 +149,63 @@ overflow: auto;
 .navigation .odjava {
     float: right;
 }
+
+.footer {
+    text-align: center;
+    width: 100%;
+    background-color: #eceff4;
+    position: fixed;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 75px;
+    padding: 0 2em;
+}
+
+.footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer img {
+    width: auto;
+    height: 50px;
+}
+
+.footer ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.footer ul li {
+    display: inline;
+    float: left;
+    display: list-item;
+}
+
+.footer .podatci {
+    display: flex;
+    align-items: center;
+}
+
+@media print {
+    .footer, .header, .navigation {
+        display: none;
+    }
+    .sadrzaj {
+        display: block;
+        width: 100%;
+        filter: grayscale(100%);
+        font-family: sans-serif;
+        text-size-adjust: 12pt;
+    }
+}

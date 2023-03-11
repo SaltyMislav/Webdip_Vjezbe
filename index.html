@@ -7,7 +7,7 @@
     <title>Početna stranica</title>
     <meta name="author" content="Mislav Žnidarec">
     <meta name="keywords" content="Odabrana tema, HTML">
-    <meta nema="description" content="9.3.2023">
+    <meta name="description" content="9.3.2023">
     <link rel="stylesheet" type="text/css" href="css/mznidarec.css">
     <link rel="stylesheet" type="text/css" href="css/mznidarec_prilagodbe.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -15,7 +15,7 @@
 <body>
     <div class="header">
         <div class="header-left">
-            <a href="./index.html">
+            <a href="./">
                 <img class="slika" src="slike/foi-logo.jpg" alt="Logo stranice">
             </a>
             <div class="title">Početna stranica</div>
@@ -28,7 +28,7 @@
     
             <div class="dropdown">
                 <select name="jezici" class="jezici">
-                    <option value="hrvatski">HR</option>
+                    <option value="hrvatski" selected>HR</option>
                     <option value="engleski">EN</option>
                     <option value="njemacki">GER</option>
                 </select>
@@ -70,10 +70,32 @@
             </li>
         </ul>
     </div>
-    <div class="sadrzaj-pocetna">
-
+    <div class="sadrzaj">
     </div>
     <div class="footer">
+        <p class="copyright">
+            2023, Mislav Žnidarec &copy;
+        </p>
+        <ul class="validation">
+            <li>
+                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F">
+                    <img src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/HTML5.png" alt="HTML5 logo">
+                </a>
+            </li>
+            <li>
+                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+                    <img src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/CSS3.png" alt="CSS logo">
+                </a>
+            </li>
+        </ul>
+        <div class="podatci">
+            <label for="podatci">Prikupljanje podataka: </label>
+            <select name="podatci" class="podatci">
+                <option value="bez prikupljanja">Bez prikupljanja</option>
+                <option selected value="osnovno">Osnovno</option>
+                <option value="sve">Sve</option>
+            </select>
+        </div>
     </div>
 </body>
 </html>
