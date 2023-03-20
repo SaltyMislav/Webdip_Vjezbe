@@ -206,6 +206,6 @@ overflow: auto;
         width: 100%;
         filter: grayscale(100%);
         font-family: sans-serif;
-        text-size-adjust: 12pt;
+        text-size-adjust: 20%;
     }
 }

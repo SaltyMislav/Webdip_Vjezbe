@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <div class="header-left">
             <a href="./">
-                <img class="slika" src="slike/foi-logo.jpg" alt="Logo stranice">
+                <img class="slika" src="./multimedija/foi-logo.jpg" alt="Logo stranice">
             </a>
             <div class="title">Početna stranica</div>
         </div>
@@ -47,55 +47,55 @@
 		        </div>
 	        </div>
         </div>
-    </div>
-    <div class="navigation">
+    </header>
+    <nav class="navigation">
         <ul class="popis">
             <li class="elementi">
-                <a href="/o_autoru.html">O autoru</a>
+                <a href="./o_autoru.html">O autoru</a>
             </li>
             <li class="elementi">
-                <a href="/obrasci/authentifikacija.html">Authentifikacija</a>
+                <a href="./obrasci/autentikacija.html">Autentikacija</a>
             </li>
             <li class="elementi">
-                <a href="/obrasci/obrazac.html">Obrazac</a>
+                <a href="./obrasci/obrazac.html">Obrazac</a>
             </li>
             <li class="elementi">
-                <a href="/ostalo/multimedija.html">Multimedija</a>
+                <a href="./ostalo/multimedija.html">Multimedija</a>
             </li>
             <li class="elementi">
-                <a href="/ostalo/popis.html">Popis</a>
+                <a href="./ostalo/popis.html">Popis</a>
             </li>
             <li class="odjava">
                 <a href="#">Odjava</a>
             </li>
         </ul>
-    </div>
+    </nav>
     <div class="sadrzaj">
     </div>
-    <div class="footer">
+    <footer class="footer">
         <p class="copyright">
             2023, Mislav Žnidarec &copy;
         </p>
         <ul class="validation">
             <li>
-                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F">
+                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F" target="_blank">
                     <img src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/HTML5.png" alt="HTML5 logo">
                 </a>
             </li>
             <li>
-                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
+                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">
                     <img src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/CSS3.png" alt="CSS logo">
                 </a>
             </li>
         </ul>
         <div class="podatci">
             <label for="podatci">Prikupljanje podataka: </label>
-            <select name="podatci" class="podatci">
+            <select id="podatci" name="podatci" class="podatci">
                 <option value="bez prikupljanja">Bez prikupljanja</option>
                 <option selected value="osnovno">Osnovno</option>
                 <option value="sve">Sve</option>
             </select>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
