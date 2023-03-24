@@ -1,0 +1,12 @@
+@media print {
+    .footer, .header, .navigation {
+        display: none;
+    }
+    .sadrzaj {
+        display: block;
+        width: 100%;
+        filter: grayscale(100%);
+        font-family: sans-serif;
+        text-size-adjust: 20%;
+    }
+}
