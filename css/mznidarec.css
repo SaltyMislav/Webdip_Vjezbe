@@ -405,18 +405,36 @@ article {
     background-color: #F7F7FF;
     margin-bottom: 10px;
     text-align: center;
+    display: flex;
 }
 
 .povijestpregledavanja h2 {
+    flex: 1 1 auto;
     text-align: center;
     margin-bottom: 10px;
 }
 
 .povijestpregledavanja aside {
-    display: inline;
+    display: inline-flex;
     padding: 10px;
 }
 
 .povijestpregledavanja img:hover {
     filter: brightness(130%);
+}
+
+.container .img-title {
+    background-color: rgb(0, 0, 0, 0.5);
+    position: relative;
+    bottom: 0;           
+    color: white;
+    width: 100%;
+    font-size: 25px;
+    padding: 15px 0;
+    text-align: center;
+    opacity: 0;           
+    transition: 0.6s;
+}
+.container:hover .img-title {
+    opacity: 1;       
 }
