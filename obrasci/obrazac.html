@@ -1,131 +1,184 @@
 <!DOCTYPE html>
 <html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Obrazac</title>
-    <meta name="author" content="Mislav Žnidarec">
-    <meta name="keywords" content="Odabrana tema, HTML">
-    <meta name="description" content="9.3.2023">
-    <link rel="stylesheet" type="text/css" href="../css/mznidarec.css">
-    <link rel="stylesheet" type="text/css" href="../css/mznidarec_prilagodbe.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
-<body>
+    <meta name="author" content="Mislav Žnidarec" />
+    <meta name="keywords" content="Odabrana tema, HTML" />
+    <meta name="description" content="9.3.2023" />
+    <link rel="stylesheet" type="text/css" href="../css/mznidarec.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css/mznidarec_prilagodbe.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
     <header class="header">
-        <div class="header-left">
-            <a href="./">
-                <img class="slika" src="../multimedija/foi-logo.jpg" alt="Logo stranice">
-            </a>
-            <div class="title">Obrazac</div>
+      <div class="header-left">
+        <a href="./">
+          <img
+            class="slika"
+            src="../multimedija/foi-logo.jpg"
+            alt="Logo stranice"
+          />
+        </a>
+        <div class="title">Obrazac</div>
+      </div>
+
+      <div class="header-right">
+        <div class="search-button">
+          <a class="button" href="#modal"
+            ><i class="material-icons">search</i></a
+          >
         </div>
 
-        <div class="header-right">
-            <div class="search-button">
-                <a class="button" href="#modal"><i class="material-icons">search</i></a>
-            </div>
-    
-            <div class="dropdown">
-                <select name="jezici" class="jezici">
-                    <option value="hrvatski" selected>HR</option>
-                    <option value="engleski">EN</option>
-                    <option value="njemacki">GER</option>
-                </select>
-            </div>
+        <div class="dropdown">
+          <select name="jezici" class="jezici">
+            <option value="hrvatski" selected>HR</option>
+            <option value="engleski">EN</option>
+            <option value="njemacki">GER</option>
+          </select>
         </div>
+      </div>
 
-        <div id="modal" class="overlay">
-            <div class="popup">
-                <h2>Pretraživanje</h2>
-		        <a class="close" href="./obrazac.html">&times;</a>
-		        <div class="content">
-                    <form action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php" target="_blank">
-                        <input type="text" name="Search" placeholder="Pretraživanje...">
-                        <input type="submit" value="Pretraži">  
-                    </form>
-		        </div>
-	        </div>
+      <div id="modal" class="overlay">
+        <div class="popup">
+          <h2>Pretraživanje</h2>
+          <a class="close" href="./obrazac.html">&times;</a>
+          <div class="content">
+            <form
+              action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
+              target="_blank"
+            >
+              <input type="text" name="Search" placeholder="Pretraživanje..." />
+              <input type="submit" value="Pretraži" />
+            </form>
+          </div>
         </div>
+      </div>
     </header>
     <nav class="navigation">
-        <ul class="popis">
-            <li class="elementi">
-                <a href="../index.html">Početna stranica</a>
-            </li>
-            <li class="elementi">
-                <a href="../o_autoru.html">O autoru</a>
-            </li>
-            <li class="elementi">
-                <a href="./autentikacija.html">Autentikacija</a>
-            </li>
-            <li class="elementi">
-                <a href="../ostalo/multimedija.html">Multimedija</a>
-            </li>
-            <li class="elementi">
-                <a href="../ostalo/popis.html">Popis</a>
-            </li>
-            <li class="odjava">
-                <a href="#">Odjava</a>
-            </li>
-        </ul>
+      <ul class="popis">
+        <li class="elementi">
+          <a href="../index.html">Početna stranica</a>
+        </li>
+        <li class="elementi">
+          <a href="../o_autoru.html">O autoru</a>
+        </li>
+        <li class="elementi">
+          <a href="./autentikacija.html">Autentikacija</a>
+        </li>
+        <li class="elementi">
+          <a href="../ostalo/multimedija.html">Multimedija</a>
+        </li>
+        <li class="elementi">
+          <a href="../ostalo/popis.html">Popis</a>
+        </li>
+        <li class="odjava">
+          <a href="#">Odjava</a>
+        </li>
+      </ul>
     </nav>
     <div class="sadrzaj">
-
-        <div class="povijestpregledavanja">
-            <h2>
-                Povijest pregledavanja
-            </h2>
-            <aside class="container">
-                <img src="../multimedija/Bill-games.jpg" alt="Pocetna stranica" height="100px" width="100px">
-                <div class="img-title">Početna stranica</div>
-            </aside>
-            <aside class="container">
-                <img src="../multimedija/Bill-games.jpg" alt="Pocetna stranica" height="100px" width="100px">
-                <div class="img-title">O autoru</div>
-            </aside>
-            <aside class="container">
-                <img src="../multimedija/Bill-games.jpg" alt="Pocetna stranica" height="100px" width="100px">
-                <div class="img-title">Autentikacija</div>
-            </aside>
-            <aside class="container">
-                <img src="../multimedija/Bill-games.jpg" alt="Pocetna stranica" height="100px" width="100px">
-                <div class="img-title">Obrazac</div>
-            </aside>
-            <aside class="container">
-                <img src="../multimedija/Bill-games.jpg" alt="Pocetna stranica" height="100px" width="100px">
-                <div class="img-title">Multimedija</div>
-            </aside>
-            <aside class="container">
-                <img src="../multimedija/Bill-games.jpg" alt="Pocetna stranica" height="100px" width="100px">
-                <div class="img-title">Popis</div>
-            </aside>
-        </div>
+      <div class="povijestpregledavanja">
+        <h2>Povijest pregledavanja</h2>
+        <aside class="container">
+          <img
+            src="../multimedija/Bill-games.jpg"
+            alt="Pocetna stranica"
+            height="100px"
+            width="100px"
+          />
+          <div class="img-title">Početna stranica</div>
+        </aside>
+        <aside class="container">
+          <img
+            src="../multimedija/Bill-games.jpg"
+            alt="Pocetna stranica"
+            height="100px"
+            width="100px"
+          />
+          <div class="img-title">O autoru</div>
+        </aside>
+        <aside class="container">
+          <img
+            src="../multimedija/Bill-games.jpg"
+            alt="Pocetna stranica"
+            height="100px"
+            width="100px"
+          />
+          <div class="img-title">Autentikacija</div>
+        </aside>
+        <aside class="container">
+          <img
+            src="../multimedija/Bill-games.jpg"
+            alt="Pocetna stranica"
+            height="100px"
+            width="100px"
+          />
+          <div class="img-title">Obrazac</div>
+        </aside>
+        <aside class="container">
+          <img
+            src="../multimedija/Bill-games.jpg"
+            alt="Pocetna stranica"
+            height="100px"
+            width="100px"
+          />
+          <div class="img-title">Multimedija</div>
+        </aside>
+        <aside class="container">
+          <img
+            src="../multimedija/Bill-games.jpg"
+            alt="Pocetna stranica"
+            height="100px"
+            width="100px"
+          />
+          <div class="img-title">Popis</div>
+        </aside>
+      </div>
     </div>
     <footer class="footer">
-        <p class="copyright">
-            2023, Mislav Žnidarec &copy;
-        </p>
-        <ul class="validation">
-            <li>
-                <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2Fobrasci%2Fobrazac.html" target="_blank">
-                    <img src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/HTML5.png" alt="HTML5 logo">
-                </a>
-            </li>
-            <li>
-                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">
-                    <img src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/CSS3.png" alt="CSS logo">
-                </a>
-            </li>
-        </ul>
-        <div class="podatci">
-            <label for="podatci">Prikupljanje podataka: </label>
-            <select id="podatci" name="podatci" class="podatci">
-                <option value="bez prikupljanja">Bez prikupljanja</option>
-                <option selected value="osnovno">Osnovno</option>
-                <option value="sve">Sve</option>
-            </select>
-        </div>
+      <p class="copyright">2023, Mislav Žnidarec &copy;</p>
+      <ul class="validation">
+        <li>
+          <a
+            href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2Fobrasci%2Fobrazac.html"
+            target="_blank"
+          >
+            <img
+              src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/HTML5.png"
+              alt="HTML5 logo"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarka.foi.hr%2FWebDiP%2F2022%2Fzadaca_01%2Fmznidarec%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en"
+            target="_blank"
+          >
+            <img
+              src="https://barka.foi.hr/WebDiP/2020/materijali/zadace/CSS3.png"
+              alt="CSS logo"
+            />
+          </a>
+        </li>
+      </ul>
+      <div class="podatci">
+        <label for="podatci">Prikupljanje podataka: </label>
+        <select id="podatci" name="podatci" class="podatci">
+          <option value="bez prikupljanja">Bez prikupljanja</option>
+          <option selected value="osnovno">Osnovno</option>
+          <option value="sve">Sve</option>
+        </select>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
