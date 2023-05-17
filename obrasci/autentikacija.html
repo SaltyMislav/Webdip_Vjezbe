@@ -86,7 +86,81 @@
         </li>
       </ul>
     </nav>
-    <div class="sadrzaj">
+    <div class="sadrzaj_autentikacija">
+      <form
+        class="forma_registracija"
+        action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
+        target="_blank"
+        method="post"
+      >
+        <label for="ime_prezime">Ime i prezime:</label><br />
+        <input
+          type="text"
+          id="ime_prezime"
+          name="ime_prezime"
+          maxlength="30"
+          required
+        />
+        <br /><br />
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          maxlength="50"
+          size="30"
+          required
+        />
+        <br /><br />
+        <p>Spol:</p>
+        <input type="radio" id="musko" name="spol" value="Muško" checked />
+        <label for="musko">Muško</label><br />
+        <input type="radio" id="zensko" name="spol" value="Žensko" />
+        <label for="zensko">Žensko</label><br />
+        <input type="radio" id="ostalo" name="spol" value="Ostalo" />
+        <label for="ostalo">Ostalo</label><br /><br />
+        <label for="lozinka">Lozinka:</label><br />
+        <input
+          type="password"
+          id="lozinka"
+          name="lozinka"
+          minlength="5"
+          required
+        /><br /><br />
+        <label for="potvrda_lozinke">Potvrda lozinke:</label><br />
+        <input
+          type="password"
+          name="potvrda_lozinke"
+          id="potvrda_lozinke"
+          minlength="5"
+          required
+        /><br /><br />
+        <input type="submit" value="Pošalji" />
+      </form>
+      <form
+        class="forma_prijava"
+        action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
+        target="_blank"
+        method="get"
+      >
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          size="30"
+          required
+        /><br /><br />
+        <label for="lozinka">Lozinka:</label><br />
+        <input
+          type="password"
+          name="lozinka"
+          id="lozinka"
+          size="30"
+          required
+        /><br /><br />
+        <input type="submit" value="Pošalji" />
+      </form>
       <div class="povijestpregledavanja">
         <h2>Povijest pregledavanja</h2>
         <aside class="container">
