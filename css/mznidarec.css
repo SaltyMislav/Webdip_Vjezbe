@@ -160,7 +160,7 @@ body {
   text-align: center;
   width: 100%;
   background-color: #eceff4;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   display: inline-flex;
   justify-content: space-between;
@@ -611,4 +611,28 @@ article {
 
 .sadrzaj_autentikacija .povijestpregledavanja {
   grid-column: 1/3;
+}
+
+.sadrzaj_obrazac .forma_obrazac{
+  position: absolute;
+  width: 320px;
+  left: 0;
+  right: 0;
+  top: 150px;
+  bottom: 0;
+  margin: auto;
+}
+
+.sadrzaj_obrazac .forma_obrazac .posalji {
+  float: right;
+}
+
+.sadrzaj_obrazac .forma_obrazac .prvi input, .sadrzaj_obrazac .forma_obrazac .prvi textarea {
+  margin-left: 15px;
+}
+
+.sadrzaj_obrazac .povijestpregledavanja {
+  position: fixed !important;
+  bottom: 75px !important;
+  margin-left: 2.5%;
 }

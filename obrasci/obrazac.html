@@ -86,7 +86,76 @@
         </li>
       </ul>
     </nav>
-    <div class="sadrzaj">
+    <div class="sadrzaj_obrazac">
+      <form
+        class="forma_obrazac"
+        action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
+        target="_blank"
+      >
+        <fieldset class="prvi">
+          <legend>Glavni sadržaj</legend>
+          <label for="naslov">Naslov:</label> <br>
+          <input type="text" name="naslov" id="naslov" required /> <br>
+          <label for="posiljatelj">Pošiljatelj:</label> <br>
+          <input
+            type="email"
+            name="posiljatelj"
+            id="posiljatelj"
+            value="mznidarec@foi.hr"
+            required
+          /> <br>
+          <label for="primatelj">Primatelj:</label> <br>
+          <input type="email" name="priamtelj" id="primatelj" required /> <br>
+          <label for="poruke">Poruke:</label>
+          <div class="poruke">
+            <input
+              type="checkbox"
+              name="pristigla"
+              id="pristigla"
+              checked
+              required
+            />
+            <label for="pristigla">pristigla</label> <br>
+            <input type="checkbox" name="poslana" id="poslana" />
+            <label for="poslana">poslana</label> <br>
+            <input type="checkbox" name="nacrt" id="nacrt" />
+            <label for="nacrt">nacrt</label> <br>
+            <input type="checkbox" name="smece" id="smece" />
+            <label for="smece">smeće</label> <br>
+            <input type="checkbox" name="nezeljena" id="nezeljena" />
+            <label for="nezeljena">neželjena</label> <br>
+            <input type="checkbox" name="vazno" id="vazno" />
+            <label for="vazno">važno</label> <br>
+          </div>
+          <label for="sadrzaj">Sadržaj:</label> <br>
+          <textarea name="sadrzaj" id="sadrzaj" cols="30" rows="5" required> Unesite sadrzaj</textarea> <br>
+          <label for="prilog">Prilog:</label> <br>
+          <input type="file" name="prilog" id="prilog" />
+        </fieldset>
+        <fieldset>
+          <legend>Dodani sadržaj</legend>
+          <label for="datum_vrijeme">Datum i vrijeme:</label>
+          <input
+            type="datetime-local"
+            name="datum_vrijeme"
+            id="datum_vrijeme"
+            required
+          /> <br>
+          <label for="telefon">Telefon:</label>
+          <input type="tel" name="telefon" id="telefon" required /> <br>
+          <label for="prioritet">Prioritet:</label>
+          <input
+            type="range"
+            name="prio"
+            id="prioritet"
+            min="0"
+            max="5"
+            required
+          /> <br>
+        </fieldset>
+        <input type="submit" class="posalji" value="Pošalji" /> <br>
+      </form>
+
       <div class="povijestpregledavanja">
         <h2>Povijest pregledavanja</h2>
         <aside class="container">
