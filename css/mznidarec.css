@@ -409,11 +409,8 @@ article {
   margin: auto;
   padding: 10px;
   background-color: #f7f7ff;
-  margin-bottom: 10px;
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: block;
 }
 
 .povijestpregledavanja h2 {
@@ -422,8 +419,8 @@ article {
 }
 
 .povijestpregledavanja aside {
-  display: inline-flex;
-  padding: 10px;
+  display: inline-block;
+  width: 200px;
 }
 
 .povijestpregledavanja img:hover {
@@ -444,6 +441,10 @@ article {
 }
 .container:hover .img-title {
   opacity: 1;
+}
+
+.sadrzaj_autor section {
+  display: block;
 }
 
 .left_section {
@@ -623,7 +624,7 @@ article {
   width: 320px;
   left: 0;
   right: 0;
-  top: 150px;
+  top: 130px;
   bottom: 0;
   margin: auto;
 }
@@ -677,3 +678,47 @@ article {
   margin-bottom: 2px;
   background-color: #f7f7ff;
 }
+
+  
+  .sadrzaj_popis table {
+    border-collapse: collapse;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 10px;
+  }
+  
+  .sadrzaj_popis th, td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #000;
+  }
+
+  .sadrzaj_popis tfoot td {
+    text-align: right;
+  }
+
+  .sadrzaj_popis tfoot td:nth-child(even){
+    text-align: left;
+  }
+
+  .sadrzaj_popis tfoot tr{
+    background-color: #fff !important;
+  }
+  
+  .sadrzaj_popis th {
+    background-color: #00FF00;
+  }
+  
+  .sadrzaj_popis tr:nth-child(even) {
+    background-color: #E2F3DA;
+  }
+
+  .sadrzaj_popis tr:nth-child(odd) {
+    background-color: #F9F9E7;
+  }
+  
+  .sadrzaj_popis caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
