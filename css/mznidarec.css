@@ -6,6 +6,11 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.clear {
+  clear: both;
+  height: 75px;
+}
+
 body {
   background-color: #bdd5ea;
 }
@@ -635,4 +640,40 @@ article {
   position: fixed !important;
   bottom: 75px !important;
   margin-left: 2.5%;
+}
+
+.sadrzaj_multimedija {
+  display: block;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.sadrzaj_multimedija .prvi {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: #f7f7ff;
+}
+
+.sadrzaj_multimedija .prvi div {
+  display: inline-block;
+  margin: 10px;
+}
+
+.sadrzaj_multimedija .drugi div {
+  display: inline-block;
+  margin: 10px;
+}
+
+.sadrzaj_multimedija .prvi div ul,
+.sadrzaj_multimedija .drugi div ul {
+  list-style-type: none;
+}
+
+.sadrzaj_multimedija .drugi {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: #f7f7ff;
 }
