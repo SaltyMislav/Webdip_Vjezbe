@@ -1,0 +1,267 @@
+[
+  {
+    "id_poruke": "1",
+    "id_status": "2",
+    "kategorije": "2",
+    "naslov": "Registracija",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "01.01.2023. 00:00:00",
+    "sadrzaj": "Aktivirajte račun u roku od 8 sati  - pošaljite poruku!",
+    "prilog": null
+  },
+  {
+    "id_poruke": "2",
+    "id_status": "1",
+    "kategorije": "1",
+    "naslov": "Registracija",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "01.01.2023. 00:00:00",
+    "sadrzaj": "Aktivirajte račun u roku od 8 sati  - pošaljite poruku!",
+    "prilog": null
+  },
+  {
+    "id_poruke": "3",
+    "id_status": "2",
+    "kategorije": ["2", "6"],
+    "naslov": "RE:Registracija",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "admin@foi.hr",
+    "datum_vrijeme": "01.01.2023. 06:00:00",
+    "sadrzaj": "Zahtjev za aktivacijom korisničkog računa!",
+    "prilog": null
+  },
+  {
+    "id_poruke": "4",
+    "id_status": "2",
+    "kategorije": ["1", "6"],
+    "naslov": "RE:Registracija",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "admin@foi.hr",
+    "datum_vrijeme": "01.01.2023. 06:00:00",
+    "sadrzaj": "Zahtjev za aktivacijom korisničkog računa!",
+    "prilog": null
+  },
+  {
+    "id_poruke": "5",
+    "id_status": "2",
+    "kategorije": "2",
+    "naslov": "Informacije",
+    "posiljatelj": "jzec@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "01.02.2023. 12:30:00",
+    "sadrzaj": "Došlo je do promjene uvjeta korištenja stranica! Sve informacije nalaze se u dokumentu priloga ove poruke.",
+    "prilog": "uvjeti.pdf"
+  },
+  {
+    "id_poruke": "6",
+    "id_status": "1",
+    "kategorije": ["1", "5"],
+    "naslov": "Informacije",
+    "posiljatelj": "jzec@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "01.02.2023. 12:30:00",
+    "sadrzaj": "Došlo je do promjene uvjeta korištenja stranica! Sve informacije nalaze se u dokumentu priloga ove poruke.",
+    "prilog": "uvjeti.pdf"
+  },
+  {
+    "id_poruke": "7",
+    "id_status": "2",
+    "kategorije": "2",
+    "naslov": "Upozorenje",
+    "posiljatelj": "jzec@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "02.02.2023. 11:30:00",
+    "sadrzaj": "Niste promijenili lozinku zadnjih godinu dana. Upute za promjenu lozinke nalaze se prilogu ove poruke.",
+    "prilog": "upute.pdf"
+  },
+  {
+    "id_poruke": "8",
+    "id_status": "2",
+    "kategorije": ["1", "5"],
+    "naslov": "Upozorenje",
+    "posiljatelj": "jzec@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "02.02.2023. 11:30:00",
+    "sadrzaj": "Niste promijenili lozinku zadnjih godinu dana. Upute za promjenu lozinke nalaze se prilogu ove poruke.",
+    "prilog": "upute.pdf"
+  },
+  {
+    "id_poruke": "9",
+    "id_status": "2",
+    "kategorije": "2",
+    "naslov": "Pitanje",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "admin@foi.hr",
+    "datum_vrijeme": "03.02.2023. 11:00:00",
+    "sadrzaj": "Primio sam nekoliko poruka od nepoznatog izvora u kojem se od mene traži da preuzmem ili pročitam upute. Da li je došlo do promjena korištenja stranice? Treba li promijeniti lozinku?",
+    "prilog": null
+  },
+  {
+    "id_poruke": "10",
+    "id_status": "1",
+    "kategorije": ["1", "6"],
+    "naslov": "Pitanje",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "admin@foi.hr",
+    "datum_vrijeme": "03.02.2023. 11:00:00",
+    "sadrzaj": "Primio sam nekoliko poruka od nepoznatog izvora u kojem se od mene traži da preuzmem ili pročitam upute. Da li je došlo do promjena korištenja stranice? Treba li promijeniti lozinku?",
+    "prilog": null
+  },
+  {
+    "id_poruke": "11",
+    "id_status": "2",
+    "kategorije": "2",
+    "naslov": "Re:Pitanje",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "04.02.2023. 13:00:00",
+    "sadrzaj": "Radi se o neželjenoj pošti. Nije došlo do promjena u načinu korištenja. Ne mojte nikada odgovarati, preuzimati i otvarati datoteke iz nepouzdanih izvora.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "12",
+    "id_status": "2",
+    "kategorije": "1",
+    "naslov": "Re:Pitanje",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "04.02.2023. 13:00:00",
+    "sadrzaj": "Radi se o neželjenoj pošti. Nije došlo do promjena u načinu korištenja. Ne mojte nikada odgovarati, preuzimati i otvarati datoteke iz nepouzdanih izvora.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "13",
+    "id_status": "2",
+    "kategorije": ["2", "6"],
+    "naslov": "RE:Informacije",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "05.02.2023. 00:00:00",
+    "sadrzaj": "Kontaktirao sam administratora i rečeno je da nije došlo do promjena u načinu korištenja.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "14",
+    "id_status": "1",
+    "kategorije": "1",
+    "naslov": "RE:Informacije",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "05.02.2023. 00:00:00",
+    "sadrzaj": "Kontaktirao sam administratora i rečeno je da nije došlo do promjena u načinu korištenja.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "15",
+    "id_status": "2",
+    "kategorije": ["2", "6"],
+    "naslov": "RE:Upozorenje",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "06.02.2023. 06:00:00",
+    "sadrzaj": "Kontaktirao sam administratora te za sada nije potrebno promijeniti lozinku.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "16",
+    "id_status": "2",
+    "kategorije": "1",
+    "naslov": "RE:Upozorenje",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "06.02.2023. 06:00:00",
+    "sadrzaj": "Kontaktirao sam administratora te za sada nije potrebno promijeniti lozinku.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "17",
+    "id_status": "2",
+    "kategorije": "3",
+    "naslov": "Naslov",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "07.02.2023. 16:00:00",
+    "sadrzaj": "TODO.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "18",
+    "id_status": "1",
+    "kategorije": "3",
+    "naslov": "Naslov1",
+    "posiljatelj": "pkos@mailinator.com",
+    "primatelj": "admin@foi.hr",
+    "datum_vrijeme": "08.02.2023. 00:00:00",
+    "sadrzaj": "TODO.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "19",
+    "id_status": "2",
+    "kategorije": "3",
+    "naslov": "Naslov2",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "09.02.2023. 00:00:00",
+    "sadrzaj": "TODO.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "20",
+    "id_status": "2",
+    "kategorije": "3",
+    "naslov": "Naslov3",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "10.02.2023. 00:00:00",
+    "sadrzaj": "TODO.",
+    "prilog": null
+  },
+
+  {
+    "id_poruke": "21",
+    "id_status": "2",
+    "kategorije": "4",
+    "naslov": "Važno",
+    "posiljatelj": "jzec@foi.hr",
+    "primatelj": "pkos@mailinator.com",
+    "datum_vrijeme": "11.02.2023. 00:00:00",
+    "sadrzaj": "Vaši podaci su kriptirani. Uvjeti za dekriptiranje nalaze se u prilogu.",
+    "prilog": "zahtjevi.pdf"
+  },
+  {
+    "id_poruke": "22",
+    "id_status": "1",
+    "kategorije": "4",
+    "naslov": "Važno",
+    "posiljatelj": "jzec@foi.hr",
+    "primatelj": "admin@foi.hr",
+    "datum_vrijeme": "12.02.2023. 00:00:00",
+    "sadrzaj": "Vaši podaci su kriptirani. Uvjeti za dekriptiranje nalaze se u prilogu.",
+    "prilog": "zahtjevi.pdf"
+  },
+  {
+    "id_poruke": "23",
+    "id_status": "2",
+    "kategorije": "4",
+    "naslov": "Važno",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "13.02.2023. 06:00:00",
+    "sadrzaj": "Posljednje upozorenje zbog širenja dezinformacija drugim korisnicima. Još jednom i Vaš račun će biti uklonjen.",
+    "prilog": null
+  },
+  {
+    "id_poruke": "24",
+    "id_status": "2",
+    "kategorije": "4",
+    "naslov": "Važno",
+    "posiljatelj": "admin@foi.hr",
+    "primatelj": "jzec@foi.hr",
+    "datum_vrijeme": "14.02.2023. 06:00:00",
+    "sadrzaj": "Vaš račun biti će uklonjen zbog nepridržavanja uvjeta korištenja",
+    "prilog": null
+  }
+]
