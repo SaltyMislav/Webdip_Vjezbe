@@ -77,6 +77,7 @@ body {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
+  z-index: 20;
   visibility: hidden;
   opacity: 0;
 }
@@ -451,13 +452,13 @@ article {
 }
 
 .container .img-title {
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: #bdd5ea;
   position: relative;
   bottom: 0;
   color: white;
   width: 100%;
-  font-size: 25px;
-  padding: 15px 0;
+  font-size: 15px;
+  padding: 10px 0;
   text-align: center;
   opacity: 0;
   transition: 0.6s;
@@ -644,15 +645,23 @@ article {
 
 .sadrzaj_obrazac .forma_obrazac {
   position: absolute;
-  width: 320px;
-  left: 0;
-  right: 0;
+  left: 20px;
+  right: 20px;
   top: 130px;
   bottom: 0;
-  margin: auto;
+}
+.sadrzaj_obrazac .forma_obrazac .prvi {
+  float: left;
+  margin-right: 20px;
 }
 
-.sadrzaj_obrazac .forma_obrazac .posalji {
+.sadrzaj_obrazac .forma_obrazac .drugi {
+  margin-bottom: 20px;
+  max-width: fit-content;
+}
+
+.sadrzaj_obrazac .forma_obrazac .button {
+  margin-left: 20px;
   float: right;
 }
 
@@ -662,6 +671,7 @@ article {
 }
 
 .sadrzaj_obrazac .povijestpregledavanja {
+  max-height: 200px;
   position: fixed !important;
   bottom: 75px !important;
   margin-left: 2.5%;
@@ -759,12 +769,22 @@ td {
   text-align: center;
 }
 
-.button {
+.button_forma {
   background-color:#0a0a23;
+  cursor: pointer;
   color: #fff;
   border:none; 
   border-radius:10px; 
-  padding:15px;
-  min-height:30px; 
+  padding:10px;
+  min-height:25px; 
   min-width: 120px;
+}
+
+.button_forma:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.posalji {
+  background-color: #28a745 !important;
 }
