@@ -100,12 +100,15 @@ body {
   border-radius: 5px;
   width: 60%;
   position: relative;
+  overflow-y: scroll !important;
+  max-height: 900px;
+
 }
 
 .popup_era img {
-  display: block;
-  padding: 5px;
-  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
 }
 
 .popup_era figcaption {
@@ -744,12 +747,14 @@ td {
   margin-bottom: 10px;
 }
 
-.sadrzaj_era .era_model img {
+.sadrzaj_era .era_model img,
+.sadrzaj_navigacijski .era_model img {
   display: block;
   margin: auto;
   margin-top: 40px;
 }
 
-.sadrzaj_era .era_model figcaption {
+.sadrzaj_era .era_model figcaption,
+.sadrzaj_navigacijski .era_model figcaption {
   text-align: center;
 }
