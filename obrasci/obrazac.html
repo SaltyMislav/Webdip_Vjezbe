@@ -102,11 +102,11 @@
       >
         <fieldset class="prvi">
           <legend>Glavni sadržaj</legend>
-          <div class="prvi_element">
+          <div class="prviElement">
             <label for="naslov">Naslov:</label> <br>
             <input type="text" name="naslov" id="naslov" required /> <br>
           </div>
-          <div class="drugi_element">
+          <div class="drugiElement">
             <label for="posiljatelj">Pošiljatelj:</label> <br>
             <input
               type="email"
@@ -116,38 +116,38 @@
               required
             /> <br>
           </div>
-          <div class="treci_element">
+          <div class="treciElement">
             <label for="primatelj">Primatelj:</label> <br>
-            <input type="email" name="priamtelj" id="primatelj" required /> <br>
+            <input type="email" name="primatelj" id="primatelj" required /> <br>
           </div>
-          <div class="cetverti_element">
+          <div class="cetvertiElement">
             <label for="poruke">Poruke:</label>
             <div class="poruke">
               <input
                 type="checkbox"
-                name="pristigla"
+                name="poruka"
                 id="pristigla"
                 checked
                 required
               />
               <label for="pristigla">pristigla</label> <br>
-              <input type="checkbox" name="poslana" id="poslana" />
+              <input type="checkbox" name="poruka" id="poslana" />
               <label for="poslana">poslana</label> <br>
-              <input type="checkbox" name="nacrt" id="nacrt" />
+              <input type="checkbox" name="poruka" id="nacrt" />
               <label for="nacrt">nacrt</label> <br>
-              <input type="checkbox" name="smece" id="smece" />
+              <input type="checkbox" name="poruka" id="smece" />
               <label for="smece">smeće</label> <br>
-              <input type="checkbox" name="nezeljena" id="nezeljena" />
+              <input type="checkbox" name="poruka" id="nezeljena" />
               <label for="nezeljena">neželjena</label> <br>
-              <input type="checkbox" name="vazno" id="vazno" />
+              <input type="checkbox" name="poruka" id="vazno" />
               <label for="vazno">važno</label> <br>
             </div>
           </div>
-          <div class="peti_element">
+          <div class="petiElement">
             <label for="sadrzaj">Sadržaj:</label> <br>
             <textarea name="sadrzaj" id="sadrzaj" cols="30" rows="5" required> Unesite sadrzaj</textarea> <br>
           </div>
-          <div class="sesti_element">
+          <div class="sestiElement">
             <label for="prilog">Prilog:</label> <br>
             <input type="file" name="prilog" id="prilog" /></div>
         </fieldset>
@@ -174,8 +174,10 @@
             /> <br>
           </div>
         </fieldset>
-        <input type="button" class="dalje button_forma" value="Dalje">
-        <input type="button" class="posalji button_forma" value="Pošalji" /> <br>
+        <div class="button">
+          <input type="button" class="dalje button_forma" value="Dalje">
+          <input type="button" class="posalji button_forma" value="Pošalji" />
+        </div>
       </form>
 
       <div class="povijestpregledavanja">

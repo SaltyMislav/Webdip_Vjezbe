@@ -651,18 +651,18 @@ article {
   bottom: 0;
 }
 .sadrzaj_obrazac .forma_obrazac .prvi {
-  float: left;
-  margin-right: 20px;
+  margin: auto;
+  max-width: fit-content;
 }
 
 .sadrzaj_obrazac .forma_obrazac .drugi {
-  margin-bottom: 20px;
+  margin: auto;
   max-width: fit-content;
 }
 
 .sadrzaj_obrazac .forma_obrazac .button {
-  margin-left: 20px;
-  float: right;
+  margin: auto;
+  width: 250px;
 }
 
 .sadrzaj_obrazac .forma_obrazac .prvi input,
@@ -787,4 +787,9 @@ td {
 
 .posalji {
   background-color: #28a745 !important;
+  float: right;
+}
+
+.greska {
+  border: 2px solid #da4d4d !important;
 }
