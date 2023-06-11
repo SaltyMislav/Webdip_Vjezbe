@@ -103,53 +103,65 @@
         <fieldset class="prvi">
           <legend>Glavni sadržaj</legend>
           <div class="prviElement">
-            <label for="naslov">Naslov:</label> <br>
-            <input type="text" name="naslov" id="naslov" required /> <br>
+            <label for="naslov">Naslov:</label> <br />
+            <input type="text" name="naslov" id="naslov" required /> <br />
           </div>
           <div class="drugiElement">
-            <label for="posiljatelj">Pošiljatelj:</label> <br>
+            <label for="posiljatelj">Pošiljatelj:</label> <br />
             <input
               type="email"
               name="posiljatelj"
               id="posiljatelj"
               value="mznidarec@foi.hr"
               required
-            /> <br>
+            />
+            <br />
           </div>
           <div class="treciElement">
-            <label for="primatelj">Primatelj:</label> <br>
-            <input type="email" name="primatelj" id="primatelj" required /> <br>
+            <label for="primatelj">Primatelj:</label> <br />
+            <input type="email" name="primatelj" id="primatelj" required />
+            <br />
           </div>
           <div class="cetvertiElement">
             <label for="poruke">Poruke:</label>
             <div class="poruke">
-              <input
-                type="checkbox"
-                name="poruka"
-                id="pristigla"
-                checked
-                required
-              />
-              <label for="pristigla">pristigla</label> <br>
-              <input type="checkbox" name="poruka" id="poslana" />
-              <label for="poslana">poslana</label> <br>
-              <input type="checkbox" name="poruka" id="nacrt" />
-              <label for="nacrt">nacrt</label> <br>
-              <input type="checkbox" name="poruka" id="smece" />
-              <label for="smece">smeće</label> <br>
-              <input type="checkbox" name="poruka" id="nezeljena" />
-              <label for="nezeljena">neželjena</label> <br>
-              <input type="checkbox" name="poruka" id="vazno" />
-              <label for="vazno">važno</label> <br>
+              <label class="custom-checkbox" for="pristigla">
+                <input type="checkbox" name="poruka" id="pristigla" />
+                <span class="checkmark"></span>Pristigla
+              </label>
+              <label class="custom-checkbox" for="poslana">
+                <input type="checkbox" name="poruka" id="poslana" />
+                <span class="checkmark"></span>Poslana
+              </label>
+              <label class="custom-checkbox" for="nacrt">
+                <input type="checkbox" name="poruka" id="nacrt" />
+                <span class="checkmark"></span>Nacrt
+              </label>
+              <label class="custom-checkbox" for="smece">
+                <input type="checkbox" name="poruka" id="smece" />
+                <span class="checkmark"></span>Smeće
+              </label>
+              <label class="custom-checkbox" for="nezeljena">
+                <input type="checkbox" name="poruka" id="nezeljena" />
+                <span class="checkmark"></span>Neželjena
+              </label>
+              <label class="custom-checkbox" for="vazno">
+                <input type="checkbox" name="poruka" id="vazno" />
+                <span class="checkmark"></span>Važno
+              </label>
             </div>
           </div>
           <div class="petiElement">
-            <label for="sadrzaj">Sadržaj:</label> <br>
-            <textarea name="sadrzaj" id="sadrzaj" cols="30" rows="5" required> Unesite sadrzaj</textarea> <br>
+            <label for="sadrzaj">Sadržaj:</label> <br />
+            <textarea name="sadrzaj" id="sadrzaj" cols="30" rows="5" required>
+ Unesite sadrzaj</textarea
+            >
+            <br />
           </div>
           <div class="sestiElement">
-            <label for="prilog">Prilog:</label> <br>
-            <input type="file" name="prilog" id="prilog" /></div>
+            <label for="prilog">Prilog:</label> <br />
+            <input type="file" name="prilog" id="prilog" />
+          </div>
         </fieldset>
         <fieldset class="drugi">
           <legend>Dodani sadržaj</legend>
@@ -160,9 +172,10 @@
               name="datum_vrijeme"
               id="datum_vrijeme"
               required
-            /> <br>
+            />
+            <br />
             <label for="telefon">Telefon:</label>
-            <input type="tel" name="telefon" id="telefon" required /> <br>
+            <input type="tel" name="telefon" id="telefon" required /> <br />
             <label for="prioritet">Prioritet:</label>
             <input
               type="range"
@@ -171,11 +184,12 @@
               min="0"
               max="5"
               required
-            /> <br>
+            />
+            <br />
           </div>
         </fieldset>
         <div class="button">
-          <input type="button" class="dalje button_forma" value="Dalje">
+          <input type="button" class="dalje button_forma" value="Dalje" />
           <input type="button" class="posalji button_forma" value="Pošalji" />
         </div>
       </form>

@@ -52,7 +52,6 @@ function provjeraPolja() {
     case 4:
       var input = document.getElementsByName("poruka");
       var provjera = provjeraCheckboxa(input);
-      bojanjeCheckboxa(provjera, input);
       break;
     case 5:
       break;
@@ -138,13 +137,14 @@ function provjeraMaila(email) {
 
 function provjeraCheckboxa(checkboxes) {
   var selectedCategories = [];
-
+  
   for (var i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
-      selectedCategories.push(checkboxes[i].value);
+      selectedCategories.push(checkboxes[i].id);
     }
   }
 
+  console.log(selectedCategories);
   if (selectedCategories.length < 1) {
     return false;
   } else {
