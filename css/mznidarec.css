@@ -793,6 +793,11 @@ td {
 .greska {
   border: 2px solid #da4d4d !important;
 }
+
+.greskaCheckbox {
+  background-color: #da4d4d !important;
+  opacity: 0.6;
+}
 /* The container */
 .custom-checkbox {
   display: block;
@@ -828,12 +833,12 @@ td {
 
 /* On mouse-over, add a grey background color */
 .custom-checkbox:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #ccc !important;
 }
 
 /* When the checkbox is checked, add a blue background */
 .custom-checkbox input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #2196F3 !important;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
