@@ -22,8 +22,10 @@
       rel="stylesheet"
       href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="../javascript/mznidarec_jquery.js"></script>
   </head>
   <body>
     <header class="header">
@@ -63,8 +65,8 @@
               action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
               target="_blank"
             >
-              <input type="text" name="Search" placeholder="Pretraživanje..." />
-              <input type="submit" value="Pretraži" />
+              <input type="text" id="search" name="Search" placeholder="Pretraživanje..." />
+              <input type="submit" id="go" value="Pretraži" />
             </form>
           </div>
         </div>
@@ -101,71 +103,75 @@
     <div class="sadrzaj_autentikacija">
       <form
         class="forma_registracija"
+        id="forma_registracija"
         action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
         target="_blank"
         method="post"
       >
-        <label for="ime_prezime">Ime i prezime:</label><br />
+        <label for="imePrezimeRegistracija">Ime i prezime:</label><br />
         <input
           type="text"
-          id="ime_prezime"
-          name="ime_prezime"
+          id="imePrezimeRegistracija"
+          name="imePrezimeRegistracija"
           maxlength="30"
         />
         <br /><br />
-        <label for="email">Email:</label><br />
+        <label for="emailRegistracija">Email:</label><br />
         <input
           type="email"
-          id="email"
-          name="email"
+          id="emailRegistracija"
+          name="emailRegistracija"
           maxlength="50"
           size="30"
         />
         <br /><br />
-        <p>Spol:</p>
-        <input type="radio" id="musko" name="spol" value="Muško" checked />
-        <label for="musko">Muško</label><br />
-        <input type="radio" id="zensko" name="spol" value="Žensko" />
-        <label for="zensko">Žensko</label><br />
-        <input type="radio" id="ostalo" name="spol" value="Ostalo" />
-        <label for="ostalo">Ostalo</label><br /><br />
-        <label for="lozinka">Lozinka:</label><br />
+        <div id="spol">
+          <p>Spol:</p>
+          <input type="radio" id="musko" name="spol" value="Muško" checked />
+          <label for="musko">Muško</label><br />
+          <input type="radio" id="zensko" name="spol" value="Žensko" />
+          <label for="zensko">Žensko</label><br />
+          <input type="radio" id="ostalo" name="spol" value="Ostalo" />
+          <label for="ostalo">Ostalo</label><br /><br />
+        </div>
+        <label for="lozinkaRegistracija">Lozinka:</label><br />
         <input
           type="password"
-          id="lozinka"
-          name="lozinka"
+          id="lozinkaRegistracija"
+          name="lozinkaRegistracija"
           minlength="5"
         /><br /><br />
-        <label for="potvrda_lozinke">Potvrda lozinke:</label><br />
+        <label for="potvrdaLozinkeRegistracija">Potvrda lozinke:</label><br />
         <input
           type="password"
-          name="potvrda_lozinke"
-          id="potvrda_lozinke"
+          name="potvrdaLozinkeRegistracija"
+          id="potvrdaLozinkeRegistracija"
           minlength="5"
         /><br /><br />
-        <input type="submit" value="Pošalji" />
+        <input type="button" id="submitRegistracija" value="Pošalji" />
       </form>
       <form
         class="forma_prijava"
+        id="forma_prijava"
         action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
         target="_blank"
         method="get"
       >
-        <label for="email">Email:</label><br />
+        <label for="emailPrijava">Email:</label><br />
         <input
           type="email"
-          name="email"
-          id="email"
+          name="emailPrijava"
+          id="emailPrijava"
           size="30"
         /><br /><br />
-        <label for="lozinka">Lozinka:</label><br />
+        <label for="lozinkaPrijava">Lozinka:</label><br />
         <input
           type="password"
-          name="lozinka"
-          id="lozinka"
+          name="lozinkaPrijava"
+          id="lozinkaPrijava"
           size="30"
         /><br /><br />
-        <input type="submit" value="Pošalji" />
+        <input type="button" id="submitPrijava" value="Pošalji" />
       </form>
       <div class="povijestpregledavanja">
         <h2>Povijest pregledavanja</h2>
@@ -256,7 +262,7 @@
         <label for="podatci">Prikupljanje podataka: </label>
         <select id="podatci" name="podatci" class="podatci">
           <option value="bez prikupljanja">Bez prikupljanja</option>
-          <option selected value="osnovno">Osnovno</option>
+          <option value="osnovno">Osnovno</option>
           <option value="sve">Sve</option>
         </select>
       </div>
