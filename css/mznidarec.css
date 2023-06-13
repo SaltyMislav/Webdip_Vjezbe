@@ -103,7 +103,6 @@ body {
   position: relative;
   overflow-y: scroll !important;
   max-height: 900px;
-
 }
 
 .popup_era img {
@@ -770,13 +769,13 @@ td {
 }
 
 .button_forma {
-  background-color:#0a0a23;
+  background-color: #0a0a23;
   cursor: pointer;
   color: #fff;
-  border:none; 
-  border-radius:10px; 
-  padding:10px;
-  min-height:25px; 
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 25px;
   min-width: 120px;
 }
 
@@ -838,7 +837,7 @@ td {
 
 /* When the checkbox is checked, add a blue background */
 .custom-checkbox input:checked ~ .checkmark {
-  background-color: #2196F3 !important;
+  background-color: #2196f3 !important;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -863,4 +862,57 @@ td {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.ispisGreskeRegistracija {
+  grid-column: 1;
+  width: 95%;
+  margin-left: 45px;
+  margin-top: 10px;
+  color: red;
+  font-size: large;
+  text-align: center;
+}
+
+.ispisUspjesnoRegistracija {
+  grid-column: 1;
+  width: 95%;
+  margin-left: 45px;
+  margin-top: 10px;
+  color: green;
+  font-size: large;
+  text-align: center;
+}
+
+.ispisGreskePrijava {
+  grid-column: 2;
+  width: 95%;
+  margin-right: 45px;
+  margin-top: 10px;
+  color: red;
+  font-size: large;
+  text-align: center;
+}
+
+.ispisUpjesnoPrijava {
+  grid-column: 2;
+  width: 95%;
+  margin-right: 45px;
+  margin-top: 10px;
+  color: green;
+  font-size: large;
+  text-align: center;
+}
+
+#tablica_wrapper {
+  padding: 20px;
+}
+
+#tablica_filter input,
+#tablica_length select {
+  background-color: white;
+}
+
+.box {
+  text-align: center;
 }

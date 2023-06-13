@@ -2,8 +2,14 @@ window.onload = function () {
   let naslov = document.title;
   switch (naslov) {
     case "Obrazac":
-      popunjavanjeObrasca();
-      postavljenjeGumbaDalje();
+      var cookie = JSON.parse(getCookie("popis"));
+      console.log(cookie);
+      popunjavanjeObrasca(cookie);
+      if (cookie == null) {
+        postavljenjeGumbaDalje();
+      } else {
+        popunjavanjeForme(cookie);
+      }
       checkboxEventListener();
       provjeraSadrzajaEvent();
       break;
@@ -12,7 +18,7 @@ window.onload = function () {
 
 let brojPolja = 1;
 
-function popunjavanjeObrasca() {
+function popunjavanjeObrasca(cookie) {
   const input2 = document.querySelector(".drugiElement");
   const input3 = document.querySelector(".treciElement");
   const input4 = document.querySelector(".cetvertiElement");
@@ -20,12 +26,61 @@ function popunjavanjeObrasca() {
   const input6 = document.querySelector(".sestiElement");
   const inputDodatniElementi = document.querySelector(".drugi");
 
-  input2.style.visibility = "hidden";
-  input3.style.visibility = "hidden";
-  input4.style.visibility = "hidden";
-  input5.style.visibility = "hidden";
-  input6.style.visibility = "hidden";
-  inputDodatniElementi.style.visibility = "hidden";
+  if (cookie == null) {
+    input2.style.visibility = "hidden";
+    input3.style.visibility = "hidden";
+    input4.style.visibility = "hidden";
+    input5.style.visibility = "hidden";
+    input6.style.visibility = "hidden";
+    inputDodatniElementi.style.visibility = "hidden";
+  }
+}
+
+function popunjavanjeForme(cookie) {
+  document.getElementById("naslov").value = cookie.Naslov;
+  document.getElementById("posiljatelj").value = cookie.Posiljatelj;
+  document.getElementById("primatelj").value = cookie.Primatelj;
+  document.getElementById("sadrzaj").value = cookie.Sadrzaj;
+
+  var fileInput = document.getElementById("prilog");
+
+  var file = new File(["Hello World!"], cookie.Prilog, {
+    type: "text.plain",
+    lastModified: new Date(),
+  });
+
+  const dataTransfer = new DataTransfer();
+  dataTransfer.items.add(file);
+  fileInput.file = dataTransfer.files;
+
+  var date = new Date(cookie.DatumVrijeme);
+
+  var year = date.getFullYear();
+  var month = ("0" + (date.getMonth() + 1)).slice(-2);
+  var day = ("0" + date.getDate()).slice(-2);
+  var hours = ("0" + date.getHours()).slice(-2);
+  var minutes = ("0" + date.getMinutes()).slice(-2);
+
+  var formattedDate =
+    year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+
+  document.getElementById("datum_vrijeme").value = formattedDate;
+
+  var checkboxes = document.getElementsByName("poruka");
+
+  console.log(cookie.Kategorije);
+
+  kategorije = cookie.Kategorije;
+
+  checkboxes.forEach(function (checkbox) {
+    var checkboxValue = checkbox.id;
+
+    if(kategorije.includes(checkboxValue)) {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+  });
 }
 
 function postavljenjeGumbaDalje() {
@@ -84,13 +139,14 @@ function provjeraPolja() {
       bojanjeCheckboxa(provjera, input);
       break;
     case 5:
-      var input = document.getElementById('sadrzaj');
+      var input = document.getElementById("sadrzaj");
       var provjera = provjeraSadrzaja(input);
       bojanjePolja(provjera, input);
       break;
     case 6:
-      var input = document.getElementById('prilog');
-      input.parentElement.parentElement.nextElementSibling.style.visibility = 'visible';
+      var input = document.getElementById("prilog");
+      input.parentElement.parentElement.nextElementSibling.style.visibility =
+        "visible";
       brojPolja++;
       break;
     case 7:
@@ -236,41 +292,53 @@ function provjeraSadrzajaEvent() {
     }
     if (cleanedText.length < 50) {
       input.classList.add("greska");
-    }
-    else {
+    } else {
       input.classList.remove("greska");
     }
   });
 }
 
-function provjeraSadrzaja (input) {
+function provjeraSadrzaja(input) {
   var text = input.value;
 
-    if (text.length < 50) {
-      return false;
+  if (text.length < 50) {
+    return false;
+  }
+
+  var cleanedText = "";
+  var isTag = false;
+
+  for (var i = 0; i < text.length; i++) {
+    if (text[i] === "<") {
+      isTag = true;
+    }
+    if (text[i] === ">") {
+      isTag = true;
+    }
+    if (!isTag) {
+      cleanedText += text[i];
+    }
+    isTag = false;
+  }
+  if (cleanedText.length !== text.length) {
+    alert("HTML oznake nisu dozvoljene.");
+    input.value = cleanedText;
+  }
+  if (cleanedText.length < 50) {
+    return false;
+  }
+  return true;
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
+  if (ca != null)
+    for (let index = 0; index < ca.length; index++) {
+      var c = ca[index];
+      while (c.charAt(0) == " ") c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
 
-    var cleanedText = "";
-    var isTag = false;
-
-    for (var i = 0; i < text.length; i++) {
-      if (text[i] === "<") {
-        isTag = true;
-      }
-      if (text[i] === ">") {
-        isTag = true;
-      }
-      if (!isTag) {
-        cleanedText += text[i];
-      }
-      isTag = false;
-    }
-    if (cleanedText.length !== text.length) {
-      alert("HTML oznake nisu dozvoljene.");
-      input.value = cleanedText;
-    }
-    if (cleanedText.length < 50) {
-      return false;
-    }
-    return true;
+  return null;
 }

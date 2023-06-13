@@ -26,6 +26,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="../javascript/mznidarec_jquery.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css"
+    />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
   </head>
   <body>
     <header class="header">
@@ -101,9 +106,22 @@
       </ul>
     </nav>
     <div class="sadrzaj">
+      <div class="box">
+        <h2>Poruke</h2>
+        <select id="category-select">
+          <option value="1" selected>Pristigla</option>
+          <option value="2">Poslana</option>
+          <option value="3">Nacrt</option>
+          <option value="4">Smeće</option>
+          <option value="5">Neželjena</option>
+          <option value="6">Važno</option>
+        </select>
+      </div>
       <div class="sadrzaj_popis">
-        <table>
-          <caption>Email Poruke</caption>
+        <table id="tablica" class="hover">
+          <caption>
+            Email Poruke
+          </caption>
           <thead>
             <tr>
               <th>Naslov</th>
