@@ -65,7 +65,12 @@
               action="http://barka.foi.hr/WebDiP/2022/materijali/zadace/ispis_forme.php"
               target="_blank"
             >
-              <input type="text" id="search" name="Search" placeholder="Pretraživanje..." />
+              <input
+                type="text"
+                id="search"
+                name="Search"
+                placeholder="Pretraživanje..."
+              />
               <input type="submit" id="go" value="Pretraži" />
             </form>
           </div>
@@ -127,11 +132,30 @@
         <br /><br />
         <div id="spol">
           <p>Spol:</p>
-          <input type="radio" id="musko" name="spol" value="Muško" checked />
+          <input
+            type="radio"
+            id="musko"
+            name="spol"
+            class="spol"
+            value="Muško"
+            checked
+          />
           <label for="musko">Muško</label><br />
-          <input type="radio" id="zensko" name="spol" value="Žensko" />
+          <input
+            type="radio"
+            id="zensko"
+            name="spol"
+            class="spol"
+            value="Žensko"
+          />
           <label for="zensko">Žensko</label><br />
-          <input type="radio" id="ostalo" name="spol" value="Ostalo" />
+          <input
+            type="radio"
+            id="ostalo"
+            name="spol"
+            class="spol"
+            value="Ostalo"
+          />
           <label for="ostalo">Ostalo</label><br /><br />
         </div>
         <label for="lozinkaRegistracija">Lozinka:</label><br />

@@ -135,77 +135,146 @@ function zaglavljeOstalo() {
   });
 }
 
+// function podnozje() {
+//   var statistika = Cookies.getJSON("statistika") || [];
+
+//   var updateVisitInfo = function (mode) {
+//     var pageName = $(document).find("title").text();
+//     var pageInfo = statistika.find(function (info) {
+//       return info.pageName === pageName;
+//     });
+
+//     if (mode === "bez prikupljanja") {
+//       // Ako je bez prikupljanja podataka, izbriši cijeli kolačić
+//       Cookies.remove("statistika", { path: "/" });
+//       statistika = [];
+//     } else if (mode === "osnovno") {
+//       // Ako je osnovno, postavi ili ažuriraj informacije o trenutnoj stranici
+//       if (pageInfo) {
+//         // Ako već postoji informacija o stranici, ažuriraj je
+//         pageInfo.lastVisit = new Date();
+//         pageInfo.visitCount += 1;
+//       } else {
+//         // Ako ne postoji informacija o stranici, stvori je
+//         pageInfo = {
+//           pageName: pageName,
+//           lastVisit: new Date(),
+//           visitCount: 1,
+//         };
+//         statistika.push(pageInfo);
+//       }
+
+//       // Ažuriraj kolačić (postavi ga za korijenski direktorij i postavi rok trajanja na 1 godinu)
+//       Cookies.set("statistika", statistika, { expires: 365, path: "/" });
+//     }
+//   };
+
+//   // Postavi vrijednost izbornika na temelju postojanja kolačića
+//   if (statistika.length > 0) {
+//     $("#podatci").val("osnovno");
+//   } else {
+//     $("#podatci").val("bez prikupljanja");
+//   }
+
+//   // Ažuriraj informacije o posjeti na temelju trenutno odabrane opcije
+//   updateVisitInfo($("#podatci").val());
+
+//   // Ažuriraj informacije o posjeti kad se odabir promijeni
+//   $("#podatci").change(function () {
+//     updateVisitInfo($(this).val());
+//   });
+// }
+
 function podnozje() {
-  var statistika = Cookies.getJSON("statistika") || [];
+  var statistikaStr = getCookie("statistika");
 
   var updateVisitInfo = function (mode) {
-    var pageName = $(document).find("title").text();
-    var pageInfo = statistika.find(function (info) {
-      return info.pageName === pageName;
-    });
+    var path = $(document).find("title").text();
+    var statistika;
 
-    if (mode === "bez prikupljanja") {
-      // Ako je bez prikupljanja podataka, izbriši cijeli kolačić
-      Cookies.remove("statistika", { path: "/" });
-      statistika = [];
-    } else if (mode === "osnovno") {
-      // Ako je osnovno, postavi ili ažuriraj informacije o trenutnoj stranici
-      if (pageInfo) {
-        // Ako već postoji informacija o stranici, ažuriraj je
-        pageInfo.lastVisit = new Date();
-        pageInfo.visitCount += 1;
+    if (mode === "bez prikupljanja") deleteCookie("statistika");
+    else if (mode === "osnovno") {
+      if (statistikaStr) {
+        statistika = JSON.parse(statistikaStr);
+        if (statistika[path]) {
+          statistika[path].count++;
+          statistika[path].lastVisit = new Date().toISOString();
+        } else {
+          statistika[path] = { count: 1, lastVisit: new Date().toISOString() };
+        }
       } else {
-        // Ako ne postoji informacija o stranici, stvori je
-        pageInfo = {
-          pageName: pageName,
-          lastVisit: new Date(),
-          visitCount: 1,
-        };
-        statistika.push(pageInfo);
+        statistika = {};
+        statistika[path] = { count: 1, lastVisit: new Date().toISOString() };
       }
-
-      // Ažuriraj kolačić (postavi ga za korijenski direktorij i postavi rok trajanja na 1 godinu)
-      Cookies.set("statistika", statistika, { expires: 365, path: "/" });
+      setCookie("statistika", JSON.stringify(statistika), 7);
     }
   };
 
-  // Postavi vrijednost izbornika na temelju postojanja kolačića
-  if (statistika.length > 0) {
-    $("#podatci").val("osnovno");
-  } else {
+  if (statistikaStr == null) {
     $("#podatci").val("bez prikupljanja");
+  } else {
+    $("#podatci").val("osnovno");
   }
 
-  // Ažuriraj informacije o posjeti na temelju trenutno odabrane opcije
-  updateVisitInfo($("#podatci").val());
+  if ($("#podatci").val() === "osnovno") {
+    updateVisitInfo("osnovno");
+  }
 
-  // Ažuriraj informacije o posjeti kad se odabir promijeni
   $("#podatci").change(function () {
     updateVisitInfo($(this).val());
   });
 }
 
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 25 * 60 * 1000);
+    expires = ";Expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
+  if (ca != null)
+    for (let index = 0; index < ca.length; index++) {
+      var c = ca[index];
+      while (c.charAt(0) == " ") c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+
+  return null;
+}
+
+function deleteCookie(name) {
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
 function pokretanjeFormi() {
+  var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   $(
     "#imePrezimeRegistracija, #musko, #zensko, #ostalo, #lozinkaRegistracija, #potvrdaLozinkeRegistracija"
   ).prop("disabled", true);
   $("#emailRegistracija").keyup(function () {
     var email = $(this).val();
-    console.log(email);
-    if (email.trim() == "" || email == null) {
+
+    if (!regex.test(email)) {
       $(
         "#imePrezimeRegistracija, #musko, #zensko, #ostalo, #lozinkaRegistracija, #potvrdaLozinkeRegistracija"
       ).prop("disabled", true);
+      $("#emailRegistracija").addClass("greska");
     } else {
       $.getJSON("../json/users.json", function (data) {
         var user = data.find(function (user) {
           return user.email === email;
         });
         if (!user) {
-          // Email ne postoji, otključaj polja
           $(
             "#imePrezimeRegistracija, #musko, #zensko, #ostalo, #lozinkaRegistracija, #potvrdaLozinkeRegistracija"
           ).prop("disabled", false);
+          $("#emailRegistracija").removeClass("greska");
         } else {
           $(
             "#imePrezimeRegistracija, #musko, #zensko, #ostalo, #lozinkaRegistracija, #potvrdaLozinkeRegistracija"
@@ -217,23 +286,30 @@ function pokretanjeFormi() {
 
   // Polje lozinka
   $("#lozinkaRegistracija").blur(function () {
+    $("#lozinkaRegistracija").removeClass("greska");
     var password = $(this).val();
     var passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s)(?!^[=*\/%])(?!.*[=*\/%]$).{15,25}$/;
     if (!passwordRegex.test(password)) {
-      alert("Lozinka ne zadovoljava uvjete.");
+      $("#lozinkaRegistracija").addClass("greska");
     }
   });
 
   // Kod slanja obrasca
   $("#submitRegistracija").click(function (e) {
-    var password = $("#lozinkaRegistracija").val();
-    var confirmPassword = $("#potvrdaLozinkeRegistracija").val();
-    if (password !== confirmPassword) {
-      alert("Lozinka i ponovljena lozinka nisu iste.");
-      e.preventDefault(); // Zaustavi slanje obrasca
+    var formData = {
+      nameSurname: $("#imePrezimeRegistracija").val(),
+      email: $("#emailRegistracija").val(),
+      password: $("#lozinkaRegistracija").val(),
+      confirmPassword: $("#potvrdaLozinkeRegistracija").val(),
+      gender: $(".spol:checked").val(),
+    };
+    if (formData.password !== formData.confirmPassword) {
+      $("#lozinkaRegistracija").addClass("greska");
+      $("#potvrdaLozinkeRegistracija").addClass("greska");
+      e.preventDefault();
     } else {
-      // Sve provjere su prošle, možete nastaviti s obradom obrasca
+      registracijaPrijavaCookie("Registracija", formData);
     }
   });
 
@@ -245,7 +321,7 @@ function pokretanjeFormi() {
     // Provjera postoji li korisnik u kolačiću
     var prijavaCookie = getCookie("prijava");
 
-    if (prijavaCookie == "") {
+    if (prijavaCookie == null) {
       // Slanje AJAX zahtjeva ako kolačić ne postoji
       $.ajax({
         url: "https://barka.foi.hr/WebDiP/2022/materijali/zadace/dz3/users.php",
@@ -269,48 +345,75 @@ function pokretanjeFormi() {
   $("#submitPrijava").click(function (e) {
     // Klik na gumb za slanje
     e.preventDefault();
+    var formData = {
+      email: $("#emailPrijava").val(),
+      password: $("#lozinkaPrijava").val(),
+    };
 
-    var email = $("#emailInput").val();
-    var password = $("#passwordInput").val();
-
-    // Provjera postoji li korisnik u kolačiću
     var prijavaCookie = getCookie("prijava");
 
-    if (prijavaCookie == "") {
+    if (prijavaCookie == null) {
       // Slanje AJAX zahtjeva ako kolačić ne postoji
       $.ajax({
         url: "https://barka.foi.hr/WebDiP/2022/materijali/zadace/dz3/users.php",
         type: "GET",
-        data: {
-          email: email,
-          password: password,
-        },
+        data: formData,
         success: function (data) {
           var found = $(data).find("found").text();
           if (found == "0") {
             alert("Neispravni podaci");
           } else {
-            alert("Podaci su ispravni");
-            // ovdje možete preusmjeriti korisnika ili učiniti nešto slično
+            registracijaPrijavaCookie("Prijava", formData);
           }
         },
       });
     }
   });
+}
 
-  function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(";");
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == " ") {
-        c = c.substring(1);
+function registracijaPrijavaCookie(forma, formData) {
+  var registracijaPrijava = getCookie("prijava");
+  var cookie = {};
+  console.log(formData);
+
+  if (registracijaPrijava) {
+    cookie = JSON.parse(registracijaPrijava);
+    if (forma == "Registracija") {
+      if (cookie[forma]) {
+        cookie[forma].ImePrezime = formData.nameSurname;
+        cookie[forma].Email = formData.email;
+        cookie[forma].Spol = formData.gender;
+        cookie[forma].Password = formData.Password;
+        cookie[forma].ConfirmPassword = formData.confirmPassword;
+      } else {
+        cookie[forma] = {
+          ImePrezime: formData.nameSurname,
+          Email: formData.email,
+          Spol: formData.gender,
+          Password: formData.password,
+          ConfirmPassword: formData.confirmPassword,
+        };
       }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
+    } else if (forma == "Prijava") {
+      if (cookie[forma]) {
+        cookie[forma].Email = formData.email;
+        cookie[forma].Password = formData.password;
+      } else {
+        cookie[forma] = { Email: formData.email, Password: formData.password };
       }
     }
-    return "";
+  } else {
+    if (forma == "Registracija") {
+      cookie[forma] = {
+        ImePrezime: formData.nameSurname,
+        Email: formData.email,
+        Spol: formData.gender,
+        Password: formData.password,
+        ConfirmPassword: formData.confirmPassword,
+      };
+    } else if (forma == "Prijava") {
+      cookie[forma] = { Email: formData.email, Password: formData.password };
+    }
   }
+  setCookie("prijava", JSON.stringify(cookie), 7);
 }
