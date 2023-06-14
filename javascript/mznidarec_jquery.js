@@ -499,23 +499,11 @@ function generiranjeTablice() {
   var registracijaPrijava = JSON.parse(getCookie("prijava"));
   var korisnik;
 
-  if (registracijaPrijava == null) {
-    var row = $("<tr>").append(
-      $('<td colspan = "9">').text(
-        "Ne postoje podaci za prijavljenog korisnika!"
-      )
-    );
-    $("#tableBody").append(row);
-    $("#category-select").prop("disabled", true);
-  } else {
-    korisnik = registracijaPrijava.Prijava.Email;
-  }
-
-  var dohvatiPodatke = function (value) {
+    var dohvatiPodatke = function (value) {
     var selectedCategory = value;
     $("#tableBody").empty();
     $.ajax({
-      url: "/json/messages.json",
+      url: "../json/messages.json",
       type: "GET",
       data: {
         kategorije: selectedCategory,
@@ -537,8 +525,19 @@ function generiranjeTablice() {
     });
   };
 
-  if ($("#category-select").val() == "1") {
-    dohvatiPodatke("1");
+  if (registracijaPrijava == null) {
+    var row = $("<tr>").append(
+      $('<td colspan = "9">').text(
+        "Ne postoje podaci za prijavljenog korisnika!"
+      )
+    );
+    $("#tableBody").append(row);
+    $("#category-select").prop("disabled", true);
+  } else {
+    korisnik = registracijaPrijava.Prijava.Email;
+    if ($("#category-select").val() == "1") {
+      dohvatiPodatke("1");
+    }
   }
 
   $("#category-select").change(function () {
